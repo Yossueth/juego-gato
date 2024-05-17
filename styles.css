@@ -1,3 +1,17 @@
+body {
+  background-image: url(img/fondo\ d\ azuel.jfif);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.texto {
+  font-size: 40px;
+}
+.reiniciar {
+  background-color: rgb(195, 28, 181);
+  margin-left: 950px;
+  margin-top: 200px;
+  font-size: 25px;
+}
 .btns {
   position: absolute;
   width: 550px;
@@ -6,51 +20,55 @@
   height: 550px;
   top: 50%;
   margin-left: -275px;
-  background-color: black;
+  background-color: rgb(31, 31, 31);
 }
-#btn {
+.btn {
   width: 150px;
   font-size: 100px;
   position: absolute;
   height: 150px;
-  border: none; 
-  background-color: rgb(140, 255, 0);
+  border: none;
+  background-color: rgb(92, 31, 167);
   text-align: center;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: rgb(186, 126, 236);
 }
 
-.b00 {
+#b00 {
   top: 25px;
   left: 25px;
 }
-.b01 {
+#b01 {
   top: 25px;
   left: 200px;
 }
-.b02 {
+#b02 {
   top: 25px;
   left: 375px;
 }
-.b10 {
+#b10 {
   top: 200px;
   left: 25px;
 }
-.b11 {
+#b11 {
   top: 200px;
   left: 200px;
 }
-.b12 {
+#b12 {
   top: 200px;
   left: 375px;
 }
-.b20 {
+#b20 {
   top: 375px;
   left: 25px;
 }
-.b21 {
+#b21 {
   top: 375px;
   left: 200px;
 }
-.b22 {
+#b22 {
   top: 375px;
   left: 375px;
 }
