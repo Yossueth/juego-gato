@@ -4,16 +4,16 @@ let jugador = "O";
 // if (jugador == "O") {jugador = X } else {jugador = "O"} 
 // funcion de las x/o y que no se repitan
 for (let index = 0; index < btn.length; index++) {
-  console.log(btn[index]);
   btn[index].addEventListener("click", function () {
     if (btn[index].innerHTML == "") {
-      btn[index].innerHTML = jugador == "O" ? jugador = "X" : jugador = "O";
+      btn[index].innerHTML = "X"
     }
-    setTimeout(computadora, 1000)
+    setTimeout(computadora, 600) //tiempo de respuesta del bot despues de que el jugador de click
+    verificarGanador()
    } 
 )
 }
-//bot del gato 
+//revicion de que hay espacios vacios 
 function computadora() {
   let posicionesValidas = false;
   for (let i = 0; i < btn.length; i++) {
@@ -22,14 +22,28 @@ function computadora() {
     }
     
   }
+  //bot que marca en un lagar random y que el espacio este vacio  
   while (posicionesValidas == true) {
     posicion = Math.floor(Math.random() *9);
-    if (btn[posicion].innerHTML == "") {
-      btn[posicion].innerHTML = jugador == "O" ? jugador = "X" : jugador = "O";
+    if (btn[posicion].innerHTML == "") { 
+      btn[posicion].innerHTML = "O"
       posicionesValidas = false
     }
   }
 }
+//verificar ganador 
+function verificarGanador() {
+  const tablero = Array.from(btn).map(btn => btn.textContent); // cambio el querySelectorAll a un array 
+  console.log(tablero)
+  
+// verificacion de horizontales 
+  for (let i = 0; i < 9; i+= 3) {
+    if (tablero[i] && tablero[i] === tablero[i+1] && tablero[i] === tablero[i+2]) { 
+      console.log("ganaste")
+    } 
+  }
+}
+
 // boton de reinicio
 let btnReiniciar = document.querySelector("button");
 btnReiniciar.addEventListener("click", function () {
